@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Scheduler Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            border: 1px solid #0078d4;
+            border-radius: 4px;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            color: #0078d4;
+        }
+        button {
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005a9e;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>PT Scheduler Embedding Test</h1>
+    <p>If you can see this page, GitHub Pages embedding is working in SharePoint!</p>
+    
+    <div class="container">
+        <h2>Connection Test</h2>
+        <p>Click the button below to test JavaScript execution:</p>
+        <button onclick="testConnection()">Test Connection</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function testConnection() {
+            document.getElementById('result').innerHTML = 
+                '<span class="success">Success! JavaScript is executing properly.</span>';
+            
+            // Check if we're in an iframe (embedded)
+            if (window.self !== window.top) {
+                document.getElementById('result').innerHTML += 
+                    '<p>Confirmed: This page is embedded in an iframe.</p>';
+            } else {
+                document.getElementById('result').innerHTML += 
+                    '<p>This page is not embedded (you\'re viewing it directly).</p>';
+            }
+        }
+    </script>
+</body>
+</html>
